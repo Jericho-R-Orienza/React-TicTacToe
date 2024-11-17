@@ -40,6 +40,12 @@ window.addEventListener('load', function(){
             this.frameX = this.frame % 18; //divide by the number of frames you have in a single row
             this.frameY = Math.floor(this.frame / 18);
         }
+
+        setAnimation(newMinFrame, newMaxFrame){
+            this.minFrame = newMinFrame;
+            this.maxFrame = newMaxFrame;
+            this.frame = this.minFrame;
+        }
     }
 
     const mandrake = new Mandrake(canvas.width, canvas.height);
