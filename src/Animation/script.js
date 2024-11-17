@@ -58,5 +58,35 @@ window.addEventListener('load', function(){
     }
 
     animate();
+
+    // when selecting "ALL" -> set min and max frame to all frames 0-355
+    const all = document.getElementById('all');
+    all.addEventListener('click', function(){
+        mandrake.setAnimation(0, 355);
+    });
+
+    // when selecting "GROW"
+    const grow = document.getElementById('grow');
+    grow.addEventListener('click', function(){
+        mandrake.setAnimation(0, 75);
+    });
+
+    // when selecting "WINK"
+    const wink = document.getElementById('wink');
+    wink.addEventListener('click', function(){
+        mandrake.setAnimation(76, 112);
+    });
+
+    // when selecting "FLOAT"
+    const float = document.getElementById('float');
+    float.addEventListener('click', function(){
+        mandrake.setAnimation(113, 462);
+    });
+
+    // when selecting "HIDE"
+    const hide = document.getElementById('hide');
+    hide.addEventListener('click', function(){
+        mandrake.setAnimation(263, 355);
+    });
 });
 
