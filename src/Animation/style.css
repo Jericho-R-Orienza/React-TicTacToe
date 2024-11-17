@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#mandrake {
+    display: none;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 5px black;
+    border: 1px solid black;
+    padding: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#controls {
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    margin: 10px;
+}
+
+#controls > p {
+    font-size: 60px;
+}
+
+#canvas1 {
+    box-shadow: inset 5px 5px 5px black;
+    border: 1px solid black;
+
+}
