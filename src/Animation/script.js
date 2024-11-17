@@ -3,22 +3,31 @@ window.addEventListener('load', function(){
     const ctx = canvas.getContext('2d');
     canvas.width = 500;
     canvas.height = 500;
-    console.log(ctx);
 
     class Mandrake {
-        constructor() {
+        constructor(canvasWidth, canvasHeight) {
+            this.canvasWidth = canvasWidth;
+            this.canvasHeight = canvasHeight;
             this.image = document.getElementById('mandrake');
             this.spriteWidth = 256;
             this.spriteHeight = 256;
             this.width = this.spriteWidth;
             this.height = this.spriteHeight;
-            this.x = 0;
-            this.y = 0;
+            this.scale = 2;
+            this.x = this.canvasWidth/2 - this.width * this.scale/2;
+            this.y = this.canvasHeight/2 - this.height * this.scale/2;
             this.minFrame = 0;
             this.maxFrame = 355;
         }
         draw(context){
-            context.drawImage(this.image, this.x, this.y);
+            //args 1 & 2 are dealing with parsing through the sprite sheet by row-col
+            context.drawImage(this.image,
+                 6 * this.spriteWidth, 
+                 8 * this.spriteHeight,
+                 this.spriteWidth, 
+                 this.spriteHeight, 
+                 this.x, this.y, 
+                 this.width * this.scale, this.height * this.scale);
             
 
         }
@@ -27,12 +36,12 @@ window.addEventListener('load', function(){
         }
     }
 
-    const mandrake = new Mandrake();
+    const mandrake = new Mandrake(canvas.width, canvas.height);
     
     function animate(){
-        mandrake.draw();
+        mandrake.draw(ctx);
     }
 
-    animated();
+    animate();
 });
 
